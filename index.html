@@ -1,0 +1,149 @@
+<index.html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ahsan 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #fbd3e9, #cbb4d4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.lock, .card {
+  background: rgba(255,255,255,0.92);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  width: 360px;
+}
+
+input {
+  padding: 12px;
+  width: 80%;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: #d16ba5;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #b94e8a;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #333;
+}
+
+p {
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.card {
+  display: none;
+}
+
+.heart {
+  font-size: 42px;
+}
+
+.love-btn {
+  background: #ff6f91;
+}
+
+.love-btn:hover {
+  background: #ff3e6c;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div class="lock" id="lock">
+  <h1>Protected 🤍</h1>
+  <p>
+    Hint: the day I was born 🎂  
+    <br>(DDMM format)
+  </p>
+  <input type="password" id="pass" placeholder="Enter password">
+  <br>
+  <button onclick="unlock()">Enter</button>
+</div>
+
+<!-- MAIN CARD -->
+<div class="card" id="card">
+  <div class="heart">💗</div>
+  <h1>For Ahsan</h1>
+
+  <p>
+    I’m sorry for being an ass.<br><br>
+    I know I mess up sometimes, I overreact, and I say things I don’t mean —  
+    but never for a second did I stop caring about you.
+    <br><br>
+    This is me choosing you,  
+    even on my worst days.
+  </p>
+
+  <button class="love-btn" onclick="showLove()">Love me 💗</button>
+
+  <p id="loveText" class="hidden" style="margin-top:20px;">
+    Thank you for loving me even when I’m hard to love.  
+    I promise my heart is always yours.
+  </p>
+
+  <p style="margin-top:25px;">— Mini</p>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Keys_of_Moon/Emotional_Piano/Keys_of_Moon_-_12_-_Tenderness.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function unlock() {
+  const password = "1011";
+  const input = document.getElementById("pass").value;
+  if (input === password) {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("card").style.display = "block";
+    document.getElementById("music").play();
+  } else {
+    alert("Wrong password 🤍");
+  }
+}
+
+function showLove() {
+  document.getElementById("loveText").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
