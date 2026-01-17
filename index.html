@@ -1,0 +1,244 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ahsan 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffe6f0;
+  background: radial-gradient(circle at top, #0d0a21, #12002b, #1b003f);
+  overflow-x: hidden;
+  perspective: 1000px;
+  scroll-behavior: smooth;
+}
+
+/* SCROLL PROGRESS BAR */
+#progress { position: fixed; top:10px; left:50%; transform:translateX(-50%); height: 10px; width: 50%; background: rgba(255,255,255,0.1); border-radius: 10px; overflow:hidden; z-index:1000;}
+#progress-bar { height:100%; width:0%; background: linear-gradient(135deg,#ff6f91,#ff9ecd); border-radius:10px;}
+
+/* SECTIONS */
+section {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  text-align:center;
+  padding:50px;
+  opacity:0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 1s ease;
+}
+
+section.visible {
+  opacity:1;
+  transform: translateY(0) scale(1);
+}
+
+/* HEADERS AND PARAGRAPHS */
+h1 { font-family:'Pacifico',cursive; font-size:42px; color:#ffb3d9; margin-bottom:20px;}
+p { max-width:700px; font-size:18px; line-height:1.8; margin-bottom:25px; }
+.signature { font-family:'Pacifico', cursive; font-size:24px; color:#ff99c9; margin-top:20px; }
+
+/* FLOATING HEARTS & SPARKLES */
+.heart, .sparkle {
+  position:absolute;
+  pointer-events:none;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(110vh) scale(0.5); opacity:0; }
+  50%{opacity:1;}
+  100%{transform: translateY(-20vh) scale(1.5); opacity:0;}
+}
+
+/* STARS */
+.star {
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  animation: twinkle 2s infinite alternate;
+}
+@keyframes twinkle { from{opacity:0.2;} to{opacity:1;} }
+
+/* TYPED TEXT */
+.typed { display:inline-block; border-right:2px solid #ff9ecd; white-space:pre-wrap; overflow:hidden; }
+
+/* BUTTONS */
+button {
+  margin-top:20px;
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ff6f91,#ff9ecd);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,105,180,0.4);
+  transition:0.3s;
+}
+button:hover { transform:scale(1.05);}
+</style>
+</head>
+
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="progress"><div id="progress-bar"></div></div>
+
+<!-- STARS BACKGROUND -->
+<script>
+for(let i=0;i<150;i++){
+  let s=document.createElement("div");
+  s.className="star";
+  s.style.left=Math.random()*100+"vw";
+  s.style.top=Math.random()*100+"vh";
+  s.style.width=Math.random()*3+"px";
+  s.style.height=Math.random()*3+"px";
+  s.style.animationDuration=(1+Math.random()*3)+"s";
+  document.body.appendChild(s);
+}
+</script>
+
+<!-- FLOATING HEARTS & SPARKLES -->
+<script>
+for(let i=0;i<120;i++){
+  let h=document.createElement("div");
+  h.className=Math.random()>0.3?"heart":"sparkle";
+  h.innerHTML=["💗","💖","💕","🌸","✨","🎀","🫶"][Math.floor(Math.random()*7)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(6+Math.random()*10)+"s";
+  h.style.fontSize=(16+Math.random()*28)+"px";
+  document.body.appendChild(h);
+}
+
+// HEARTS FOLLOW MOUSE
+document.addEventListener("mousemove", e=>{
+  let m=document.createElement("div");
+  m.className="heart";
+  m.innerHTML=["💗","💖","💕","🌸","✨","🎀","🫶"][Math.floor(Math.random()*7)];
+  m.style.left=e.clientX+"px";
+  m.style.top=e.clientY+"px";
+  m.style.fontSize=(12+Math.random()*20)+"px";
+  document.body.appendChild(m);
+  setTimeout(()=>m.remove(),2000);
+});
+</script>
+
+<!-- PASSWORD SCREEN -->
+<section id="lock">
+<h1>Only for Ahsan 💖</h1>
+<p>Hint: the day I was born 🎂</p>
+<input type="password" id="pass" placeholder="Enter password">
+<br>
+<button onclick="unlock()">Unlock 💗</button>
+</section>
+
+<!-- SECTION 1: Apology -->
+<section id="section1">
+<h1>To My Love 🤍</h1>
+<p class="typed" id="typed1"></p>
+<div class="signature">— Mini 💞</div>
+</section>
+
+<!-- SECTION 2: How much he means -->
+<section id="section2">
+<h1>Always You 💖</h1>
+<p class="typed" id="typed2"></p>
+<div class="signature">— Mini 💞</div>
+<button onclick="heartRain()">Shower of Hearts 💗</button>
+</section>
+
+<!-- SECTION 3: Love Declaration -->
+<section id="section3">
+<h1>My Promise 💌</h1>
+<p class="typed" id="typed3"></p>
+<div class="signature">— Mini 💞</div>
+</section>
+
+<!-- SECTION 4: Forever Mine -->
+<section id="section4">
+<h1>Forever Mine 💝</h1>
+<p class="typed" id="typed4"></p>
+<div class="signature">— Mini 💞</div>
+<button onclick="bigHeartRain()">BIG Heart Rain 💗</button>
+</section>
+
+<audio id="music" loop>
+  <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Keys_of_Moon/Emotional_Piano/Keys_of_Moon_-_12_-_Tenderness.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// PASSWORD UNLOCK
+function unlock(){
+  const password="1110";
+  if(document.getElementById("pass").value===password){
+    document.getElementById("lock").style.display="none";
+    document.querySelectorAll("section").forEach(s=>s.style.display="flex");
+    document.getElementById("music").play();
+    // Typed text for sections
+    typeText("typed1","My love, I know I haven’t always been perfect. I’ve made mistakes, but you are the reason I strive to be better. You mean everything to me.",50);
+    typeText("typed2","Every moment I think of you fills my heart with joy. I promise to love you, cherish you, and always make you feel special.",50);
+    typeText("typed3","Forever and always, I promise to stay by your side, support you, and make you feel the love you deserve.",50);
+    typeText("typed4","You are mine forever, and I am yours. My heart belongs to you alone, and our love will shine endlessly.",50);
+  } else { alert("Wrong password 💔"); }
+}
+
+// TYPED TEXT
+function typeText(id,text,speed){
+  let i=0,el=document.getElementById(id);
+  function typing(){ if(i<text.length){ el.innerHTML+=text.charAt(i); i++; setTimeout(typing,speed);} }
+  typing();
+}
+
+// HEART RAIN
+function heartRain(){
+  for(let i=0;i<50;i++){
+    let r=document.createElement("div");
+    r.className="heart";
+    r.innerHTML=["💗","💖","💕","✨","🫶"][Math.floor(Math.random()*5)];
+    r.style.left=Math.random()*100+"vw";
+    r.style.fontSize=(16+Math.random()*24)+"px";
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),2500);
+  }
+}
+
+// BIG HEART RAIN FOR LAST SECTION
+function bigHeartRain(){
+  for(let i=0;i<150;i++){
+    let r=document.createElement("div");
+    r.className="heart";
+    r.innerHTML=["💗","💖","💕","✨","🫶"][Math.floor(Math.random()*5)];
+    r.style.left=Math.random()*100+"vw";
+    r.style.fontSize=(20+Math.random()*32)+"px";
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),4000);
+  }
+}
+
+// SCROLL PROGRESS BAR
+window.addEventListener("scroll",()=>{
+  const docHeight=document.body.scrollHeight-window.innerHeight;
+  const scrollPos=window.scrollY;
+  document.getElementById("progress-bar").style.width=(scrollPos/docHeight*100)+"%";
+
+  // Fade-in sections on scroll
+  document.querySelectorAll("section").forEach(sec=>{
+    const top=sec.getBoundingClientRect().top;
+    if(top<window.innerHeight*0.8){ sec.classList.add("visible"); }
+  });
+});
+</script>
+
+</body>
+</html>
