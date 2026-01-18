@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Ahsan 🤍</title>
+<title>sorry:(🤍</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
@@ -11,7 +11,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   color: #ffe6f0;
-  background: radial-gradient(circle at top, #0d0a21, #12002b, #1b003f);
+  background: (circle at top, Hex #610F03 RGB 97, 15, 3 HSL 8, 94, 20 OKLCH 0.32, 0.12, 32 );
   overflow-x: hidden;
   perspective: 1000px;
   scroll-behavior: smooth;
@@ -46,8 +46,8 @@ h1 { font-family:'Pacifico',cursive; font-size:42px; color:#ffb3d9; margin-botto
 p { max-width:700px; font-size:18px; line-height:1.8; margin-bottom:25px; }
 .signature { font-family:'Pacifico', cursive; font-size:24px; color:#ff99c9; margin-top:20px; }
 
-/* FLOATING HEARTS & SPARKLES */
-.heart, .sparkle {
+/* FLOATING HEARTS */
+.heart {
   position:absolute;
   pointer-events:none;
   animation: floatUp linear infinite;
@@ -114,7 +114,7 @@ for(let i=0;i<150;i++){
 for(let i=0;i<120;i++){
   let h=document.createElement("div");
   h.className=Math.random()>0.3?"heart":"sparkle";
-  h.innerHTML=["💗","💖","💕","🌸","✨","🎀","🫶"][Math.floor(Math.random()*7)];
+  h.innerHTML=["💗","🎀"][Math.floor(Math.random()*7)];
   h.style.left=Math.random()*100+"vw";
   h.style.animationDuration=(6+Math.random()*10)+"s";
   h.style.fontSize=(16+Math.random()*28)+"px";
@@ -125,7 +125,7 @@ for(let i=0;i<120;i++){
 document.addEventListener("mousemove", e=>{
   let m=document.createElement("div");
   m.className="heart";
-  m.innerHTML=["💗","💖","💕","🌸","✨","🎀","🫶"][Math.floor(Math.random()*7)];
+  m.innerHTML=["💕"][Math.floor(Math.random()*7)];
   m.style.left=e.clientX+"px";
   m.style.top=e.clientY+"px";
   m.style.fontSize=(12+Math.random()*20)+"px";
@@ -136,7 +136,7 @@ document.addEventListener("mousemove", e=>{
 
 <!-- PASSWORD SCREEN -->
 <section id="lock">
-<h1>Only for Ahsan 💖</h1>
+<h1> for ass </h1>
 <p>Hint: the day I was born 🎂</p>
 <input type="password" id="pass" placeholder="Enter password">
 <br>
@@ -145,32 +145,32 @@ document.addEventListener("mousemove", e=>{
 
 <!-- SECTION 1: Apology -->
 <section id="section1">
-<h1>To My Love 🤍</h1>
+<h1>im sorry :( </h1>
 <p class="typed" id="typed1"></p>
-<div class="signature">— Mini 💞</div>
+<div class="signature">— ur Mini </div>
 </section>
 
 <!-- SECTION 2: How much he means -->
 <section id="section2">
-<h1>Always You 💖</h1>
+<h1>i wass an ass</h1>
 <p class="typed" id="typed2"></p>
-<div class="signature">— Mini 💞</div>
-<button onclick="heartRain()">Shower of Hearts 💗</button>
+<div class="signature">— Mini </div>
+<button onclick="heartRain()"><Shower of Hearts</button>
 </section>
 
 <!-- SECTION 3: Love Declaration -->
 <section id="section3">
-<h1>My Promise 💌</h1>
+<h1>love u </h1>
 <p class="typed" id="typed3"></p>
-<div class="signature">— Mini 💞</div>
+<div class="signature">— Mini </div>
 </section>
 
 <!-- SECTION 4: Forever Mine -->
 <section id="section4">
-<h1>Forever Mine 💝</h1>
+<h1>:)</h1>
 <p class="typed" id="typed4"></p>
-<div class="signature">— Mini 💞</div>
-<button onclick="bigHeartRain()">BIG Heart Rain 💗</button>
+<div class="signature">— Mini </div>
+<button onclick="bigHeartRain()"><BIG Heart Rain</button>
 </section>
 
 <audio id="music" loop>
@@ -205,7 +205,7 @@ function heartRain(){
   for(let i=0;i<50;i++){
     let r=document.createElement("div");
     r.className="heart";
-    r.innerHTML=["💗","💖","💕","✨","🫶"][Math.floor(Math.random()*5)];
+    r.innerHTML=["💗","💕","🫶"][Math.floor(Math.random()*5)];
     r.style.left=Math.random()*100+"vw";
     r.style.fontSize=(16+Math.random()*24)+"px";
     document.body.appendChild(r);
@@ -218,7 +218,7 @@ function bigHeartRain(){
   for(let i=0;i<150;i++){
     let r=document.createElement("div");
     r.className="heart";
-    r.innerHTML=["💗","💖","💕","✨","🫶"][Math.floor(Math.random()*5)];
+    r.innerHTML=["💗","💖","💕","🫶"][Math.floor(Math.random()*5)];
     r.style.left=Math.random()*100+"vw";
     r.style.fontSize=(20+Math.random()*32)+"px";
     document.body.appendChild(r);
@@ -227,16 +227,14 @@ function bigHeartRain(){
 }
 
 // SCROLL PROGRESS BAR
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll"),()=>{
   const docHeight=document.body.scrollHeight-window.innerHeight;
   const scrollPos=window.scrollY;
   document.getElementById("progress-bar").style.width=(scrollPos/docHeight*100)+"%";
 
   // Fade-in sections on scroll
-  document.querySelectorAll("section").forEach(sec=>{
-    const top=sec.getBoundingClientRect().top;
-    if(top<window.innerHeight*0.8){ sec.classList.add("visible"); }
-  });
+  document.querySelectorAll("section").forEach(sec=>{const top=sec.getBoundingClientRect().top;
+    if(top<window.innerHeight*0.8){ sec.classList.add("visible");}});
 });
 </script>
 
